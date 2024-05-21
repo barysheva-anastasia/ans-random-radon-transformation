@@ -9,6 +9,11 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 click = "^8.1.7"
+sipy = "^0.3.1"
+scipy = "^1.13.0"
+matplotlib = "^3.9.0"
+pytest-mock = "^3.14.0"
+requests = "^2.32.2"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -17,3 +22,6 @@ pytest = "^8.2.0"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+random_radon_transformation = "random_radon_transformation.console:main"
