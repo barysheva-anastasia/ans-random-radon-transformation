@@ -6,13 +6,13 @@ import math
 from random import randint
 
 
-def get_nonzero(image: np.array) -> np.array:
+def get_nonzero(image: ndarray) -> ndarray:
     nonzero_x = np.nonzero(255 - image)[0]
     nonzero_y = np.nonzero(255 - image)[1]
     pairs = np.vstack((nonzero_x, nonzero_y)).T
     return pairs
 
-def choice(pixels):
+def choice(pixels: ndarray)-> tuple:
     n = len(pixels)
     idx1 = randint(0, n - 1)
     pixel1 = pixels[idx1]
@@ -22,7 +22,7 @@ def choice(pixels):
     pixel2 = pixels[idx2]
     return (pixel1, pixel2)
 
-def random_radon_transformation(image, rho_steps = 220, theta_steps = 440, n_iter = int(1e5)):
+def random_radon_transformation(image: ndarray, rho_steps: int = 220, theta_steps: int = 440, n_iter: int = int(1e5)):
 
     nonzero_pixels = get_nonzero(image)
 
